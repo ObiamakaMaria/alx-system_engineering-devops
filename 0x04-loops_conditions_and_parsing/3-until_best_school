@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# s script prints the string "Best school"ten times with while loop
+a=0
+until [ $a -ge 10 ] 
+do
+  echo "Best School";
+  ((a++))
+done
