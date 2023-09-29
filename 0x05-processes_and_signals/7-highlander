@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# This script prints to infinity and beyond infinitely
+a=0
+while [ $a -eq 0 ]
+do
+  echo "To infinity and beyond"
+  sleep 2
+  trap 'echo "I am invincible!!!"' 15
+done
