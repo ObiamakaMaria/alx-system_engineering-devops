@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# This script displays the list of PID of current running processes
+# shellcheck disable=SC2009
+ps -aux | grep bash
