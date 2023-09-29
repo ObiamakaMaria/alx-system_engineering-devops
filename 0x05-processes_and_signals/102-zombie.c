@@ -3,19 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/**
- * infinite_while - Thus function runs an infinite while loop.
- *
- * Return: Returns 0 on sucess.
- */
-int infinite_while(void)
-{
-	while (1)
-	{
-		sleep(1);
-	}
-	return (0);
-}
+int infinite_while(void);
 
 /**
  * main - This function creates five zombie processes.
@@ -43,4 +31,18 @@ int main(void)
 	infinite_while();
 
 	return (EXIT_SUCCESS);
+}
+
+/**
+ * infinite_while - Thus function runs an infinite while loop.
+ *
+ * Return: Returns 0 on sucess.
+ */
+int infinite_while(void)
+{
+	while (1)
+	{
+		sleep(1);
+	}
+	return (0);
 }
