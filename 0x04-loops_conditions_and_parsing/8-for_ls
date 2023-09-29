@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# This script prints the element in the working directory
+list=$(ls)
+for value in $list;
+do
+  echo "$value" | cut -d '-' -f2
+done
