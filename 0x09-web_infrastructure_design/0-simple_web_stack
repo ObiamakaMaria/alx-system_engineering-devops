@@ -1,1 +1,32 @@
 Link to Image for Task 0-simple_web_stack : https://imgur.com/a/PlDq1RN
+
+What is a server
+A Server is a specialized computer or software system designed to provide services, resources, or data to other computers, known as clients, over a network.
+
+What is the role of the domain name
+Domain names provide human-readable addresses for websites and online services. Instead of typing a complex series of numbers(IP Adresses).
+
+What type of DNS record www is in www.foobar.com
+CNAME (Canonical Name) record 
+
+What is the role of the web server
+A web server is designed to host websites and deliver web pages to users' browsers upon request. It processes requests for HTML pages, images, scripts, and other web resources.
+
+What is the role of the application server
+An application server hosts and runs specific software applications or services. It provides a runtime environment for applications, enabling them to interact with databases, perform calculations, and deliver dynamic content to users.
+
+What is the role of the database
+A database plays a central role in storing, managing, and retrieving data in a structured and efficient manner.
+
+What is the server using to communicate with the computer of the user requesting the website
+IP Adress
+
+Issues with SPOF Includes:
+.System Downtime:
+If the component designated as the SPOF fails, the entire system can go offline. This downtime can disrupt services, cause loss of productivity, and negatively impact user experience.
+
+
+.Limited Scalability: SPOFs can limit the system's ability to scale. Introducing redundancy and failover mechanisms often require additional complexity, making it challenging to scale the system seamlessly.
+
+
+
