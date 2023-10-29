@@ -1,0 +1,56 @@
+Link for Task 2: https://imgur.com/a/n8zZSlf
+
+What are firewalls for?
+
+Firewalls are essential network security devices that act as a barrier between a trusted internal network and untrusted external networks, such as the internet. They are designed to monitor, filter, and control incoming and outgoing network traffic based on predetermined security rules.
+
+
+Why is the traffic served over HTTPS?
+
+Traffic is served over HTTPS (Hypertext Transfer Protocol Secure) for several important reasons related to security, privacy, and data integrity and they include:
+Data Encryption, Authentication, Data Integrty, Trust and User Confidence, SEO Ranking, Compliance and Regulations etc
+
+
+What monitoring is used for?
+
+Monitoringrefers to the continuous process of observing, evaluating, and analyzing various aspects of these systems to ensure their optimal performance, security, and availability. 
+
+
+How the monitoring tool is collecting data?
+
+Monitoring tools collect data through various methods and techniques, depending on the aspect of the system or network being monitored. 
+They include:
+SNMP (Simple Network Management Protocol), Agent-Based Monitoring, Logs and Event Logs, API Integrations etc
+
+Explain what to do if you want to monitor your web server QPS?
+
+1. Choose a Monitoring Tool
+2. Configure your web server to collect QPS data
+3. Configure your chosen monitoring tool to collect QPS data from your web server
+4. Determine acceptable QPS thresholds based on your server's capacity and expected traffic.
+5. Use visualization tools provided by your monitoring solution to create dashboards displaying QPS trends over time
+6 Regularly review the QPS data and associated metrics. 
+
+Issues:
+
+Why terminating SSL at the load balancer level is an issue
+
+it causes:
+1. Limited Encryption Inside the Network
+2. Reduced Security Control
+3. Loss of Client IP Information
+4. Increased Load Balancer Load
+
+
+Why having only one MySQL server capable of accepting writes is an issue?
+
+Having only one MySQL server capable of accepting writes is an issue primarily because of concerns related to high availability, fault tolerance, and scalability. 
+
+
+Why having servers with all the same components (database, web server and application server) might be a problem
+
+This is due to:
+1. Limited Flexibility
+2. Scalability Challenges
+3. Vendor Lock-In
+4. Risk of Single Point of Failure etc
