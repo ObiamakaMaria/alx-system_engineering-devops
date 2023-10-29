@@ -1,0 +1,31 @@
+Link for Task 1-distributed_web_infrastructure : https://imgur.com/a/2Rbrfko
+
+Load Balancer:
+A load balancer was added to distribute incoming traffic across multiple application servers for load balancing and high availability. It ensures even distribution of requests and prevents overloading a single server
+
+
+What distribution algorithm your load balancer is configured with and how it works?
+The Webinfastructure was configured with a Round Robin algorithm. It routes requests to servers in a circular order, distributing the load equally.
+
+Is your load-balancer enabling an Active-Active or Active-Passive setup, explain the difference between both
+The web infrastructure was configured in Active-Active setup. All application servers are active and handle requests simultaneously. Active-Active ensures efficient use of resources.
+
+How a database Primary-Replica (Master-Slave) cluster works?
+This was implemented for data redundancy, fault tolerance, and improved read performance. The primary server (master) handles writes, while replicas (slaves) replicate data from the master and handle read requests.
+
+What is the difference between the Primary node and the Replica node in regard to the application?
+Primary Node: Handles write operations. Application servers send write queries to the primary node, ensuring consistency in the database.
+Replica Node: Handles read operations. Application servers can distribute read queries among replica nodes, improving scalability and responsiveness.
+
+Single Points of Failure (SPOF):
+
+Issue: The web server and load balancer on Server 1 constitute a SPOF. If Server 1 fails, the entire system can experience downtime.
+
+
+Security Issues:
+
+No firewall mentioned: Lack of proper firewall configuration can expose servers to unauthorized access and attacks.
+
+Monitoring:
+
+Issue: Lack of monitoring tools and practices can lead to undetected issues, performance bottlenecks, or security breaches.
