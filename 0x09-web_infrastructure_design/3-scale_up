@@ -1,0 +1,26 @@
+Link for Task 3: https://imgur.com/a/mIx9deN
+
+Web Infrastructure Design
+
+Load Balancer (HAProxy Cluster):
+
+Two HAProxy Load Balancers configured as a cluster for high availability and load distribution.
+Responsible for routing incoming traffic to the appropriate servers based on load balancing rules.
+
+Web Server:
+
+One dedicated server for hosting static content, such as HTML, CSS, JavaScript, and media files.
+Nginx or Apache can be used as the web server software.
+Configured to handle web requests, serve static files, and cache content for improved performance.
+
+Application Server:
+
+One dedicated server for hosting the application logic and processing dynamic content.
+Node.js, Django, Ruby on Rails, or any other application framework can be used.
+Configured to handle application-specific logic, process user requests, and interact with the database.
+
+Database Server:
+
+One dedicated server for hosting the database management system (e.g., MySQL, PostgreSQL, MongoDB).
+Responsible for storing and managing application data.
+Regular backups, security configurations, and redundancy measures should be implemented to ensure data integrity and availability.
