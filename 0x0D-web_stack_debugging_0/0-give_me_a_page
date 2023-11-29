@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 # This command helps to debug a webstack application
 
-echo "ServerName localhost" >> /etc/apache2/apache2.conf
-sudo /etc/init.d/apache2 start
+echo "ServerName localhost" >> /etc/apache2/apache2.conf #append text
+sudo /etc/init.d/apache2 start #SysV init
