@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# This script installs nginx server
+#Update package list
+sudo apt-get update
+
+sudo apt-get -y install nginx
+echo "Hello World!" > /var/www/html/index.html
+
+# Nginx is listening on port 80
+sudo sed -i 's/^\(listen 80;\)/\1/'
+
+# Restart Nginx without using systemctl
+sudo service nginx restart
