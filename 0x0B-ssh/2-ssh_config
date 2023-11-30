@@ -1,0 +1,4 @@
+# This scrift configures an ssh config file
+Host *
+     PasswordAuthentication no
+     IdentityFile ~/.ssh/school
