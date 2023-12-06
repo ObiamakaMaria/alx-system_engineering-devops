@@ -1,16 +1,11 @@
 #!/usr/bin/env bash
 # install nginx server
 # Update package list
-sudo apt-get update
+apt-get -y update
 
 # Install Nginx
-sudo apt-get -y install nginx
-
+apt-get -y install nginx
+ufw allow 'Nginx HTTP'
 echo "Hello World!" > /var/www/html/index.html
-
-# Nginx is listening on port 80
-sudo sed -i 's/^\(listen 80;\)/\1/'
-
 # Restart Nginx without using systemctl
-sudo service nginx restart
-
+service nginx restart
