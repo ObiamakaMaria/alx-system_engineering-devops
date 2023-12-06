@@ -2,14 +2,21 @@
 # This script installs an nginx server & customize http return header
 
 # Install Nginx (if not already installed)
-sudo apt-get update
+sudo apt-get update -y
+apt-get upgrade -y
 sudo apt-get install -y nginx
-
-# Get the hostname of the server
-hostname=$(hostname)
-
-# Configure Nginx to add custom HTTP header
-echo "add_header X-Served-By $hostname;" | sudo tee -a /etc/nginx/nginx.conf
-
-# Restart Nginx to apply changes using SysV init
-sudo /etc/init.d/nginx restart
+echo "Hello World!" > /usr/share/nginx/html/index.html
+/etc/init.d/nginx start
+num="$(grep -c -P '^\tlocation \/redirect_me' < /etc/nginx/sites-available/default)"
+if [ "$num" -eq 0 ]
+then
+	sed -i '/^\tserver_name/ a\\n\tlocation \/redirect_me \{\n\t\treturn 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\n\t\}\n' /etc/nginx/sites-available/default
+fi
+echo "Ceci n'est pas une page" > /usr/share/nginx/html/custom_404.html
+num="$(grep -c -P '^\terror_page 404' < /etc/nginx/sites-available/default)"
+if [ "$num" -eq 0 ]
+then
+	sed -i '/^\tserver_name/ a\\n\terror_page 404 /custom_404.html;\n' /etc/nginx/sites-available/default
+fi
+sed -i '/^\tserver_name/ a\\tadd_header X-Served-By'" $HOSTNAME;" /etc/nginx/sites-available/default
+/etc/init.d/nginx restart
