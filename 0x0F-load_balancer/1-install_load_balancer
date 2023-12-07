@@ -12,8 +12,8 @@ echo "
 back_end http_back
     mode http
     balance roundrobin
-    server 348313-web-01 54.197.207.15 check
-    server 348313-web-02 54.236.56.251 check
+    server 348313-web-01 54.197.207.15:80 check
+    server 348313-web-02 54.236.56.251:80 check
 
 front_end http_front
     bind *:80
