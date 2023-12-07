@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
-# This script automates the installation of HAProxy, configures it 
-# as an HTTP load balancer on the lb-01 server
+# A script that sets up and configures HAproxy on your lb-01 server
 
 sudo apt -y update
 sudo apt -y upgrade
@@ -8,17 +7,15 @@ sudo apt -y install haproxy
 
 echo "
 
-
-back_end http_back
-    mode http
-    balance roundrobin
-    server 348313-web-01 54.197.207.15:80 check
-    server 348313-web-02 54.236.56.251:80 check
-
-front_end http_front
+frontend http_front
     bind *:80
     mode http
     default_backend http_back
 
+backend http_back
+    mode http
+    balance roundrobin
+    server 348313-web-01 54.197.207.15:80 check
+    server 348313-web-02 54.236.56.251:80 check
 " | sudo tee /etc/haproxy/haproxy.cfg
 sudo service haproxy restart
