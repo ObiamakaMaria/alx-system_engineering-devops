@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# This script removes $ then recreating the symbolic link for the default Nginx configuration.
+rm /etc/nginx/sites-enabled/default
+ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+service nginx restart
