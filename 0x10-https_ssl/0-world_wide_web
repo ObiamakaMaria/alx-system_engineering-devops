@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+#This script displays information about domains.
+
+sub_d=('www' 'lb-01' 'web-01' 'web-02')
+
+Display() {
+    subdomain=$1
+    domain=$2
+
+    dig "$subdomain.$domain" | grep -A1 'ANSWER SECTION:' | tail -1 | awk -v s="$subdomain" 'BEGIN { FS = " " } ; { print "The subdomain " s " is a " $4 " record and points to " $5 }'
+}
+
+if [ $# -eq 1 ];
+then
+    domain="$1"
+    for a in "${sub_d[@]}"
+    do
+        Display "$a" "$domain"
+    done
+elif [ $# -eq 2 ];
+then
+    domain=$1
+    sub=$2
+    Display "$sub" "$domain"
+fi;
