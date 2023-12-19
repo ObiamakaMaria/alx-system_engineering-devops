@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# This script ensures that user is runnng as nginx user
+# and not root user
+
+# Modify the Nginx configuration file to run as the nginx user
+sed -i "s/#user www-data/user nginx/" /etc/nginx/nginx.conf
+
+# Modify the default site configuration to listen on port 8080
+sed -i "s/80/8080/g" /etc/nginx/sites-available/default
+
+# Change ownership of necessary directories to the 'nginx' user
+chmod 644 /etc/nginx/nginx.conf
+
+pkill apache2
+sudo -u nginx service nginx start
+echo "Nginx is now running as the nginx user and listening on port 8080."
