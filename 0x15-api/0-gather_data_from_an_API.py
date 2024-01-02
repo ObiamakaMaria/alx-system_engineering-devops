@@ -14,7 +14,7 @@ if __name__ == "__main__":
         res_todo = requests.get("{}/todos".format(base_url),
                                 params={"userId": id}).json()
         task_completed = [c.get('title') for c in res_todo
-                     if c.get("completed") is True]
+                          if c.get("completed") is True]
         e = "Employee {} is done with tasks({}/{}):".format(
             response.get('name'), len(task_completed), len(res_todo))
         print(e)
