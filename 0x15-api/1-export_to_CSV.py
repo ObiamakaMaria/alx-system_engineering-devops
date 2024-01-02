@@ -2,8 +2,8 @@
 """Fetches and displays information about an employee's TODO list
 using the JSONPlaceholder API and exports data in CSV format."""
 
-import requests
 import csv
+import requests
 import sys
 
 
