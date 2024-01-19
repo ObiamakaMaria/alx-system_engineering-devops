@@ -1,10 +1,12 @@
-Incident Summary: 
+Incident Summary:
+ 
 On 18th of December, 2023 at 3:45 pm GMT,  an incident occurred where SSH access to my server was lost after enabling the Uncomplicated Firewall (UFW) 
 without allowing SSH traffic explicitly. This resulted in a permanent loss of connectivity to the  server  until at 4:50 pm when it was later resolved .
 This issue resulted to a lack of access to my server as I couldn't ssh into my server anymore because the ufw prevented traffic from my server as it was not enabled. This was a personal server so no other individual or group was affected.
 The rootcause was that I didn’t allow  SSH traffic  on ufw  before enabling it
 
 Timeline of Events:
+
 The issue was detected  at 3:45 pm when I tried SSHing into my server after I enabled ufw. Attempted SSH access failed due to the lack of an explicit rule
 allowing SSH traffic.
 At 3:50 pm , after the loss of connectivity I initiated investigation.
@@ -17,6 +19,7 @@ newserver and the new server was active with juts few seconds of my request.
 
 
 Corrective Measures:
+
 •	Immediate Resolution
 •	Established an alternative means of access to the server, such as console access or out-of-band management, to regain control.
 •	Temporarily disabled UFW to restore SSH connectivity.
@@ -24,7 +27,9 @@ Corrective Measures:
 •	Added an explicit rule to allow SSH traffic before re-enabling UFW:
 •	Updated documentation to emphasize the importance of allowing SSH traffic when enabling UFW.
 
+
 Preventive Measures:
+
 •	Automation of Firewall Configuration
 •	Implemented automated scripts or configuration management tools to             ensure that SSH rules are automatically configured when enabling the firewall.
 •	Rule Ordering Verification:
