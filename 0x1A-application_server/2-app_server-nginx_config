@@ -1,0 +1,16 @@
+# New Configuration for serving /airbnb-onepage/
+
+    server {
+        listen 80;
+        server_name 54.197.207.15;
+        add_header  X-Served-By 348313-web-01;
+
+        location /airbnb-onepage/ {
+            proxy_pass http://localhost:5000/airbnb-onepage/;
+            proxy_http_version 1.1;
+            proxy_set_header Upgrade $http_upgrade;
+            proxy_set_header Connection 'upgrade';
+            proxy_set_header Host $host;
+            proxy_cache_bypass $http_upgrade;
+        }
+
