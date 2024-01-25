@@ -11,7 +11,7 @@ include ::stdlib
 file_line { 'allow many requests':
   ensure  => present,                # Ensure the line is present in the file
   path    => '/etc/default/nginx',   # Path to the target file
-  line    => 'LIMIT="-n 10240-the_sky_is_the_limit_not.pp"',      # The line to be added or replaced
+  line    => 'LIMIT="-n 4096"',      # The line to be added or replaced
   replace => true                    # Replace the line if it already exists
 }
 
