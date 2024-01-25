@@ -1,24 +1,38 @@
-# Configuring the server
+# New Configuration for serving /airbnb-onepage/
+
 server {
-            # Listen on port 80
-            listen      80 default_server;
-            listen      [::]:80 default_server ipv6only=on;
+    listen 80;
+    server_name 54.197.207.15;
+    add_header X-Served-By 348313-web-01;
 
-            # IP of server
-            server_name 54.197.207.15;
+    location /airbnb-onepage/ {
+        proxy_pass http://localhost:5000/airbnb-onepage/;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
 
-            # Customize HTTP response header
-            add_header  X-Served-By 348313-web-01;
+    location /airbnb-dynamic/number_odd_or_even/ {
+        proxy_pass http://127.0.0.1:5001/airbnb-dynamic/number_odd_or_even/;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
 
-            # Serve /airbnb-onepage/ route from AirBnB_clone_v2
-            location = /airbnb-onepage/ {
-                proxy_pass http://127.0.0.1:5000/airbnb-onepage/;
-            }
+    location /api/ {
+        proxy_pass http://127.0.0.1:5002/api;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    }
 
-            # 404 error page
-            error_page 404 /404.html;
-            location /404 {
-            root /var/www/html;
-            internal;
-            }
+    # Additional server configuration...
+    error_page 404 /404.html;
+    location /404 {
+        root /var/www/html;
+        internal;
+    }
 }
