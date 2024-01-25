@@ -1,6 +1,6 @@
-## Ran the puppet command using 
-# sudo puppet apply --modulepath=/home/ubuntu/.puppet/etc/code/modules:/usr/share/puppet/modules
-# then filename which is  0-the_sky_is_the_limit_not.pp
+# Ran the puppet command using 
+# sudo puppet apply --modulepath=/home/ubuntu/.puppet/etc/code/modules:/usr/
+# share/puppet/modules then filename which is  0-the_sky_is_the_limit_not.pp
 # This Puppet code addresses potential issues with the Nginx server
 # by setting a higher limit on the number of file descriptors Nginx can use.
 
@@ -20,9 +20,3 @@ exec { 'restart nginx':
   command  => '/usr/sbin/service nginx restart',  # Command to restart Nginx
   provider => shell                              # Use a shell to execute the command
 }
-
-
-
-
-
-
