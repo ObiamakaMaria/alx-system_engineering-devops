@@ -1,5 +1,6 @@
 [Unit]
-Description=Gunicorn instance to serve Airbnb_clone
+Description=A Gunicorn instance to serve Airbnb_clone4
+Author=Obiamaka Maria Aghadiuno
 After=network.target
 
 [Service]
